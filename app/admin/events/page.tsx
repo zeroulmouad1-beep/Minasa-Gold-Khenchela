@@ -245,7 +245,7 @@ function EventsContent() {
                         {item.location || '-'}
                       </td>
                       <td className="px-4 py-3 hidden lg:table-cell" style={{ color: '#94A3B8', fontFamily: 'Tajawal, sans-serif' }}>
-                        {item.capacity || '-'}
+                        {item.capacity != null ? item.capacity : '-'}
                       </td>
                       <td className="px-4 py-3">
                         <div className="flex items-center gap-2">
