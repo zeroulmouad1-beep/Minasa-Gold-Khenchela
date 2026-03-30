@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '@/lib/auth-context'
 import { Lock, Mail, Eye, EyeOff, AlertCircle, Info } from 'lucide-react'
@@ -14,10 +14,11 @@ function LoginForm() {
   const { login, user, configured, mockMode } = useAuth()
   const router = useRouter()
 
-  if (user) {
-    router.replace('/admin')
-    return null
-  }
+  useEffect(() => {
+    if (user) router.replace('/admin')
+  }, [user, router])
+
+  if (user) return null
 
   if (!configured) {
     return (
