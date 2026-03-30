@@ -140,7 +140,7 @@ export default function ServicesPortal() {
       <header className="relative z-10 py-6 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <Link
-            href="/"
+            href="/?enter=true"
             className="inline-flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-200 group"
           >
             <ArrowRight size={20} className="transition-transform duration-200 group-hover:translate-x-1" />

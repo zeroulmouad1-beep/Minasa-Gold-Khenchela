@@ -1,7 +1,10 @@
+import { Suspense } from 'react'
 import { HomeClient } from '@/components/home-client'
 
-// Server Component — no 'use client' here.
-// dynamic({ ssr: false }) only works correctly inside Server Components.
 export default function Home() {
-  return <HomeClient />
+  return (
+    <Suspense fallback={<div style={{ width: '100vw', height: '100vh', backgroundColor: '#1E293B' }} />}>
+      <HomeClient />
+    </Suspense>
+  )
 }

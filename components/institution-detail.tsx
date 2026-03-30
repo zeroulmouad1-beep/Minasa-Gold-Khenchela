@@ -147,7 +147,7 @@ export function InstitutionDetail({ institutionId }: InstitutionDetailProps) {
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           {/* Back Button */}
           <Link 
-            href="/"
+            href="/?enter=true"
             className="flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300 hover:scale-105"
             style={{ 
               backgroundColor: INDIGO_MEDIUM,

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useSearchParams } from 'next/navigation'
 import dynamic from 'next/dynamic'
 import { Navbar } from '@/components/navbar'
 import { EventsSlider } from '@/components/events-slider'
@@ -21,7 +22,8 @@ const ImmersiveHero = dynamic(
 )
 
 export function HomeClient() {
-  const [showPlatform, setShowPlatform] = useState(false)
+  const searchParams = useSearchParams()
+  const [showPlatform, setShowPlatform] = useState(searchParams.get('enter') === 'true')
 
   if (!showPlatform) {
     return <ImmersiveHero onEnter={() => setShowPlatform(true)} />
