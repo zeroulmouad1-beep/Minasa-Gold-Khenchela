@@ -113,7 +113,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
           </div>
           <div className="flex items-center gap-3">
             <span className="text-xs hidden sm:block" style={{ color: '#64748B', fontFamily: 'Tajawal, sans-serif' }}>
-              {user?.email}
+              {user?.email || 'مدير'}
             </span>
             <Link href="/?enter=true" className="flex items-center gap-1 text-xs px-2 py-1 rounded" style={{ color: '#94A3B8', fontFamily: 'Tajawal, sans-serif' }}>
               <ChevronLeft size={14} />

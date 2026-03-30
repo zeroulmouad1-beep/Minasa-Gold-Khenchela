@@ -5,10 +5,21 @@ import { auth, isConfigured } from '@/lib/firebase'
 import { User, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth'
 import { useRouter } from 'next/navigation'
 
+const MOCK_MODE = !isConfigured && process.env.NODE_ENV !== 'production'
+const MOCK_EMAIL = 'admin'
+const MOCK_PASSWORD = 'admin'
+
+interface MockUser {
+  email: string
+  uid: string
+  displayName: string | null
+}
+
 interface AuthContextType {
-  user: User | null
+  user: User | MockUser | null
   loading: boolean
   configured: boolean
+  mockMode: boolean
   login: (email: string, password: string) => Promise<void>
   logout: () => Promise<void>
 }
@@ -16,11 +27,19 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<User | null>(null)
+  const [user, setUser] = useState<User | MockUser | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    if (!isConfigured || !auth) {
+    if (MOCK_MODE) {
+      const saved = typeof window !== 'undefined' && sessionStorage.getItem('mock_admin_auth')
+      if (saved === 'true') {
+        setUser({ email: 'admin@mock.local', uid: 'mock-admin', displayName: 'مدير النظام' })
+      }
+      setLoading(false)
+      return
+    }
+    if (!auth) {
       setLoading(false)
       return
     }
@@ -32,17 +51,31 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const login = async (email: string, password: string) => {
+    if (MOCK_MODE) {
+      if (email === MOCK_EMAIL && password === MOCK_PASSWORD) {
+        const mockUser: MockUser = { email: 'admin@mock.local', uid: 'mock-admin', displayName: 'مدير النظام' }
+        setUser(mockUser)
+        if (typeof window !== 'undefined') sessionStorage.setItem('mock_admin_auth', 'true')
+        return
+      }
+      throw { code: 'auth/invalid-credential' }
+    }
     if (!auth) throw new Error('Firebase not configured')
     await signInWithEmailAndPassword(auth, email, password)
   }
 
   const logout = async () => {
+    if (MOCK_MODE) {
+      setUser(null)
+      if (typeof window !== 'undefined') sessionStorage.removeItem('mock_admin_auth')
+      return
+    }
     if (!auth) return
     await signOut(auth)
   }
 
   return (
-    <AuthContext.Provider value={{ user, loading, configured: isConfigured, login, logout }}>
+    <AuthContext.Provider value={{ user, loading, configured: isConfigured || MOCK_MODE, mockMode: MOCK_MODE, login, logout }}>
       {children}
     </AuthContext.Provider>
   )

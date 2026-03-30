@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react'
 import { AdminGuard } from '@/lib/auth-context'
 import { AdminShell } from '@/components/admin/admin-shell'
+import { isMockMode } from '@/lib/firestore-helpers'
+import { mockGetCounts } from '@/lib/mock-data'
 import { db } from '@/lib/firebase'
 import { collection, getCountFromServer } from 'firebase/firestore'
 import { Newspaper, Settings, Calendar, TrendingUp } from 'lucide-react'
@@ -19,16 +21,20 @@ function DashboardContent() {
   useEffect(() => {
     async function fetchCounts() {
       try {
-        const [newsSnap, servicesSnap, eventsSnap] = await Promise.all([
-          getCountFromServer(collection(db, 'news')),
-          getCountFromServer(collection(db, 'services')),
-          getCountFromServer(collection(db, 'events')),
-        ])
-        setCounts({
-          news: newsSnap.data().count,
-          services: servicesSnap.data().count,
-          events: eventsSnap.data().count,
-        })
+        if (isMockMode) {
+          setCounts(mockGetCounts())
+        } else if (db) {
+          const [newsSnap, servicesSnap, eventsSnap] = await Promise.all([
+            getCountFromServer(collection(db, 'news')),
+            getCountFromServer(collection(db, 'services')),
+            getCountFromServer(collection(db, 'events')),
+          ])
+          setCounts({
+            news: newsSnap.data().count,
+            services: servicesSnap.data().count,
+            events: eventsSnap.data().count,
+          })
+        }
       } catch {
         setCounts({ news: 0, services: 0, events: 0 })
       } finally {
@@ -55,6 +61,13 @@ function DashboardContent() {
             إدارة محتوى منصة قطاع الثقافة والفنون - خنشلة
           </p>
         </div>
+
+        {isMockMode && (
+          <div className="mb-6 p-3 rounded-lg flex items-center gap-2 text-sm" style={{ backgroundColor: 'rgba(184, 115, 51, 0.12)', border: '1px solid rgba(184, 115, 51, 0.3)', color: '#D4956A', fontFamily: 'Tajawal, sans-serif' }}>
+            <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: '#B87333' }} />
+            وضع المعاينة — البيانات تجريبية ولن تُحفظ بعد إعادة التحميل
+          </div>
+        )}
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
           {cards.map((card) => {
