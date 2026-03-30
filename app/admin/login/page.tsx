@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { AuthProvider, useAuth } from '@/lib/auth-context'
+import { useAuth } from '@/lib/auth-context'
 import { Lock, Mail, Eye, EyeOff, AlertCircle, Info } from 'lucide-react'
 
 function LoginForm() {
@@ -167,9 +167,5 @@ function LoginForm() {
 }
 
 export default function AdminLoginPage() {
-  return (
-    <AuthProvider>
-      <LoginForm />
-    </AuthProvider>
-  )
+  return <LoginForm />
 }
