@@ -45,10 +45,11 @@ function LoginForm() {
     try {
       await login(email, password)
       router.replace('/admin')
-    } catch (err: any) {
-      if (err.code === 'auth/invalid-credential' || err.code === 'auth/wrong-password' || err.code === 'auth/user-not-found') {
+    } catch (err: unknown) {
+      const code = err instanceof Error && 'code' in err ? (err as { code: string }).code : ''
+      if (code === 'auth/invalid-credential' || code === 'auth/wrong-password' || code === 'auth/user-not-found') {
         setError('البريد الإلكتروني أو كلمة المرور غير صحيحة')
-      } else if (err.code === 'auth/too-many-requests') {
+      } else if (code === 'auth/too-many-requests') {
         setError('تم تجاوز عدد المحاولات المسموح بها. يرجى المحاولة لاحقاً')
       } else {
         setError('حدث خطأ أثناء تسجيل الدخول. يرجى المحاولة مرة أخرى')

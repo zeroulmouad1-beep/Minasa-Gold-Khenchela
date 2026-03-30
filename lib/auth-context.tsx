@@ -9,6 +9,15 @@ const MOCK_MODE = !isConfigured && process.env.NODE_ENV !== 'production'
 const MOCK_EMAIL = 'admin'
 const MOCK_PASSWORD = 'admin'
 
+class AuthError extends Error {
+  code: string
+  constructor(code: string, message: string) {
+    super(message)
+    this.code = code
+    this.name = 'AuthError'
+  }
+}
+
 interface MockUser {
   email: string
   uid: string
@@ -58,7 +67,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         if (typeof window !== 'undefined') sessionStorage.setItem('mock_admin_auth', 'true')
         return
       }
-      throw { code: 'auth/invalid-credential' }
+      throw new AuthError('auth/invalid-credential', 'Invalid credentials')
     }
     if (!auth) throw new Error('Firebase not configured')
     await signInWithEmailAndPassword(auth, email, password)
