@@ -7,6 +7,7 @@ import { isMockMode } from '@/lib/firestore-helpers'
 import { mockGetCounts } from '@/lib/mock-data'
 import { db } from '@/lib/firebase'
 import { collection, getCountFromServer } from 'firebase/firestore'
+import Link from 'next/link'
 import { Newspaper, Settings, Calendar, TrendingUp } from 'lucide-react'
 
 const COPPER = '#B87333'
@@ -73,7 +74,7 @@ function DashboardContent() {
           {cards.map((card) => {
             const Icon = card.icon
             return (
-              <a
+              <Link
                 key={card.label}
                 href={card.href}
                 className="p-5 rounded-xl border transition-all duration-300 hover:scale-[1.02] block"
@@ -91,7 +92,7 @@ function DashboardContent() {
                 <p className="text-xs" style={{ color: '#94A3B8', fontFamily: 'Tajawal, sans-serif' }}>
                   إجمالي {card.label}
                 </p>
-              </a>
+              </Link>
             )
           })}
         </div>
