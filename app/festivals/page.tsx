@@ -75,7 +75,7 @@ export default function FestivalsPage() {
           backgroundImage: 'url("/images/heritage.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          opacity: 0.08,
+          opacity: 0.10,
           filter: 'blur(50px)',
         }}
       />
