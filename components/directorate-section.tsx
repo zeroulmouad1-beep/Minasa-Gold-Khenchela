@@ -27,7 +27,7 @@ const departments = [
     icon: Users,
     image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80',
     particleType: 'sparkle',
-    href: '#',
+    href: '/directorate/activities',
   },
   {
     id: 3,
