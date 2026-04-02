@@ -155,7 +155,7 @@ export function ImmersiveHero({ onEnter }: { onEnter: () => void }) {
 
         {/* Bottom Action Buttons */}
         <div
-          className="mt-10 flex items-center justify-center gap-12 md:gap-20"
+          className="mt-10 flex items-center justify-center gap-8 md:gap-16"
           style={{
             animation: 'fadeInUp 1s ease-out 0.9s forwards',
             opacity: 0,
@@ -216,6 +216,47 @@ export function ImmersiveHero({ onEnter }: { onEnter: () => void }) {
             </span>
           </a>
 
+          {/* Electronic Services Button */}
+          <a
+            href="/services"
+            className="group flex flex-col items-center gap-3 transition-transform duration-300 hover:scale-110 cursor-pointer"
+          >
+            <div
+              className="w-16 h-16 md:w-20 md:h-20 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:shadow-lg"
+              style={{
+                background: 'linear-gradient(145deg, rgba(197, 160, 89, 0.15) 0%, rgba(139, 105, 20, 0.1) 100%)',
+                border: '1px solid rgba(197, 160, 89, 0.3)',
+                backdropFilter: 'blur(8px)',
+              }}
+            >
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="transition-transform duration-300 group-hover:scale-110"
+              >
+                <rect x="8" y="8" width="13" height="13" rx="3" fill="rgba(197, 160, 89, 0.2)" stroke="#C5A059" strokeWidth="1.5" />
+                <rect x="27" y="8" width="13" height="13" rx="3" fill="rgba(197, 160, 89, 0.2)" stroke="#C5A059" strokeWidth="1.5" />
+                <rect x="8" y="27" width="13" height="13" rx="3" fill="rgba(197, 160, 89, 0.2)" stroke="#C5A059" strokeWidth="1.5" />
+                <rect x="27" y="27" width="13" height="13" rx="3" fill="rgba(197, 160, 89, 0.2)" stroke="#C5A059" strokeWidth="1.5" />
+                <circle cx="14.5" cy="14.5" r="2" fill="#C5A059" opacity="0.8" />
+                <circle cx="33.5" cy="14.5" r="2" fill="#C5A059" opacity="0.8" />
+                <circle cx="14.5" cy="33.5" r="2" fill="#C5A059" opacity="0.8" />
+                <circle cx="33.5" cy="33.5" r="2" fill="#C5A059" opacity="0.8" />
+              </svg>
+            </div>
+            <span
+              className="text-sm md:text-base font-medium text-center leading-tight"
+              style={{ color: '#FFFFFF', fontFamily: "'Cairo', sans-serif" }}
+            >
+              الخدمات
+              <br />
+              الإلكترونية
+            </span>
+          </a>
+
           {/* Contact Us Button */}
           <button
             className="group flex flex-col items-center gap-3 transition-transform duration-300 hover:scale-110"
@@ -229,7 +270,6 @@ export function ImmersiveHero({ onEnter }: { onEnter: () => void }) {
                 backdropFilter: 'blur(8px)',
               }}
             >
-              {/* Phone Icon SVG */}
               <svg
                 width="40"
                 height="40"
@@ -238,7 +278,6 @@ export function ImmersiveHero({ onEnter }: { onEnter: () => void }) {
                 xmlns="http://www.w3.org/2000/svg"
                 className="transition-transform duration-300 group-hover:scale-110"
               >
-                {/* Classic telephone receiver */}
                 <path
                   d="M14 10C12 10 10 12 10 14C10 26 22 38 34 38C36 38 38 36 38 34L38 30C38 28.5 37 27 35.5 27L31 27C29.5 27 28 28 28 29.5L28 31C24 29 19 24 17 20L18.5 20C20 20 21 18.5 21 17L21 12.5C21 11 19.5 10 18 10L14 10Z"
                   fill="rgba(197, 160, 89, 0.3)"
@@ -247,7 +286,6 @@ export function ImmersiveHero({ onEnter }: { onEnter: () => void }) {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
-                {/* Call waves */}
                 <path
                   d="M30 10C34 12 37 16 38 20"
                   stroke="#C5A059"
