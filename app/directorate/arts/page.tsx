@@ -15,7 +15,7 @@ const statusConfig: Record<ArtistStatus, { bg: string; text: string; border: str
   'غير نشط': { bg: 'rgba(148,163,184,0.15)', text: '#94A3B8', border: 'rgba(148,163,184,0.30)' },
 }
 
-const TABLE_HEADERS = ['#', 'الاسم الكامل', 'التخصص', 'البلدية', 'الحالة']
+const TABLE_HEADERS = ['#', 'الاسم الكامل', 'رقم البطاقة', 'رقم التعريف الوطني', 'التخصص', 'البلدية', 'الحالة']
 
 function StatusBadge({ status }: { status: ArtistStatus }) {
   const config = statusConfig[status]
@@ -36,7 +36,7 @@ function StatusBadge({ status }: { status: ArtistStatus }) {
 function ArtistsTable({ data }: { data: Artist[] }) {
   return (
     <div className="overflow-x-auto rounded-2xl" style={{ WebkitOverflowScrolling: 'touch' }}>
-      <table className="w-full min-w-[640px] text-right" dir="rtl">
+      <table className="w-full min-w-[900px] text-right" dir="rtl">
         <thead>
           <tr
             style={{
@@ -73,6 +73,8 @@ function ArtistsTable({ data }: { data: Artist[] }) {
             >
               <td className="px-5 py-4 text-sm text-gray-400 font-mono">{artist.id}</td>
               <td className="px-5 py-4 text-sm text-white font-medium">{artist.name}</td>
+              <td className="px-5 py-4 text-sm text-gray-300 font-mono whitespace-nowrap">{artist.cardId}</td>
+              <td className="px-5 py-4 text-sm text-gray-300 font-mono whitespace-nowrap">{artist.nationalId}</td>
               <td className="px-5 py-4 text-sm text-gray-300">{artist.specialty}</td>
               <td className="px-5 py-4 text-sm text-gray-300">{artist.municipality}</td>
               <td className="px-5 py-4">
