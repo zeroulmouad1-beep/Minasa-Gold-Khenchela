@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
 import { useRef, useState, useEffect } from 'react'
 
@@ -15,7 +16,8 @@ const events = [
     title: 'مهرجان الفنون الخنشلي',
     date: 'مايو 2024',
     image: '/images/cultural-festival.jpg',
-    category: 'مهرجان',
+    category: 'المهرجانات الثقافية',
+    href: '/festivals',
   },
   {
     id: 2,
@@ -162,12 +164,16 @@ export function EventsSlider() {
           ref={containerRef}
           className="overflow-x-auto flex gap-6 pb-4 scrollbar-hide scroll-smooth"
         >
-          {events.map((event, index) => (
-            <div
+          {events.map((event, index) => {
+            const Wrapper = event.href ? Link : 'div'
+            const wrapperProps = event.href ? { href: event.href } : {}
+            return (
+            <Wrapper
               key={event.id}
-              className={`flex-shrink-0 w-96 group transition-all duration-700 ${
+              {...wrapperProps as any}
+              className={`flex-shrink-0 w-96 group transition-all duration-700 block ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-              }`}
+              }${event.href ? ' cursor-pointer' : ''}`}
               style={{
                 transitionDelay: `${index * 100}ms`,
               }}
@@ -242,8 +248,9 @@ export function EventsSlider() {
                   <p className="text-sm text-white/80">{event.date}</p>
                 </div>
               </div>
-            </div>
-          ))}
+            </Wrapper>
+            )
+          })}
         </div>
       </div>
     </section>
