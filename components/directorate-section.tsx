@@ -2,6 +2,7 @@
 
 import { Palette, Users, Landmark } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
+import Link from 'next/link'
 
 // Deep Indigo & Copper palette
 const COPPER = '#B87333'
@@ -17,6 +18,7 @@ const departments = [
     icon: Palette,
     image: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800&q=80',
     particleType: 'brush',
+    href: '/directorate/arts',
   },
   {
     id: 2,
@@ -25,6 +27,7 @@ const departments = [
     icon: Users,
     image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80',
     particleType: 'sparkle',
+    href: '#',
   },
   {
     id: 3,
@@ -33,6 +36,7 @@ const departments = [
     icon: Landmark,
     image: 'https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=800&q=80',
     particleType: 'dust',
+    href: '#',
   },
 ]
 
@@ -221,27 +225,28 @@ export function DirectorateSection() {
                     </p>
 
                     {/* CTA Button with enhanced hover */}
-                    <button
-                      className="px-6 py-2.5 rounded-lg font-semibold text-sm text-white transition-all duration-300 border-2 hover:shadow-lg relative overflow-hidden"
+                    <Link
+                      href={dept.href}
+                      className="inline-block px-6 py-2.5 rounded-lg font-semibold text-sm text-white transition-all duration-300 border-2 hover:shadow-lg relative overflow-hidden"
                       style={{
                         borderColor: COPPER,
                         backgroundColor: 'transparent',
                       }}
                       onMouseEnter={(e) => {
-                        const el = e.currentTarget as HTMLButtonElement
+                        const el = e.currentTarget as HTMLAnchorElement
                         el.style.backgroundColor = COPPER
                         el.style.boxShadow = `0 0 30px ${COPPER}60`
                         el.style.transform = 'translateY(-2px)'
                       }}
                       onMouseLeave={(e) => {
-                        const el = e.currentTarget as HTMLButtonElement
+                        const el = e.currentTarget as HTMLAnchorElement
                         el.style.backgroundColor = 'transparent'
                         el.style.boxShadow = 'none'
                         el.style.transform = 'translateY(0)'
                       }}
                     >
                       استعرض المزيد
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
