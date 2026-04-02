@@ -29,12 +29,12 @@ function DetailModal({ content, onClose }: { content: ModalContent; onClose: () 
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 animate-[fadeIn_200ms_ease-out]"
       onClick={onClose}
     >
       <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
       <div
-        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl"
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl animate-[scaleIn_300ms_ease-out]"
         style={{
           backgroundColor: 'rgba(15,23,42,0.95)',
           border: `1.5px solid ${COPPER}40`,
@@ -100,7 +100,7 @@ function DetailModal({ content, onClose }: { content: ModalContent; onClose: () 
 function LightboxModal({ image, alt, onClose }: { image: string; alt: string; onClose: () => void }) {
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 animate-[fadeIn_200ms_ease-out]"
       onClick={onClose}
     >
       <div className="absolute inset-0 bg-black/90" />
@@ -260,6 +260,11 @@ function GalleryImage({ item, spanClass, onClick }: { item: IntangibleHeritageIt
     </div>
   )
 }
+
+const KEYFRAMES = `
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+`
 
 export default function HeritagePage() {
   const [nationalMonuments, setNationalMonuments] = useState<NationalMonument[]>([])
@@ -482,7 +487,7 @@ export default function HeritagePage() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 auto-rows-[180px] sm:auto-rows-[220px]">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 auto-rows-[200px] sm:auto-rows-[220px]">
                   {intangibleHeritage.map((item, index) => {
                     const span = MASONRY_SPANS[index % MASONRY_SPANS.length]
                     const spanClass = span === 2 ? 'row-span-2' : ''
@@ -501,6 +506,8 @@ export default function HeritagePage() {
           )}
         </div>
       </main>
+
+      <style dangerouslySetInnerHTML={{ __html: KEYFRAMES }} />
 
       {modalContent && (
         <DetailModal content={modalContent} onClose={() => setModalContent(null)} />
