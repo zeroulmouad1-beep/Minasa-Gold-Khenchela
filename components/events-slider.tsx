@@ -165,21 +165,16 @@ export function EventsSlider() {
           className="overflow-x-auto flex gap-6 pb-4 scrollbar-hide scroll-smooth"
         >
           {events.map((event, index) => {
-            const Wrapper = event.href ? Link : 'div'
-            const wrapperProps = event.href ? { href: event.href } : {}
-            return (
-            <Wrapper
-              key={event.id}
-              {...wrapperProps as any}
-              className={`flex-shrink-0 w-96 group transition-all duration-700 block ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-              }${event.href ? ' cursor-pointer' : ''}`}
-              style={{
-                transitionDelay: `${index * 100}ms`,
-              }}
-              onMouseEnter={() => setHoveredId(event.id)}
-              onMouseLeave={() => setHoveredId(null)}
-            >
+            const cardClassName = `flex-shrink-0 w-96 group transition-all duration-700 block ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+            }${event.href ? ' cursor-pointer' : ''}`
+            const cardStyle = { transitionDelay: `${index * 100}ms` }
+            const cardHandlers = {
+              onMouseEnter: () => setHoveredId(event.id),
+              onMouseLeave: () => setHoveredId(null),
+            }
+
+            const cardContent = (
               <div 
                 className="relative h-56 rounded-2xl overflow-hidden transition-all duration-500"
                 style={{
@@ -248,7 +243,20 @@ export function EventsSlider() {
                   <p className="text-sm text-white/80">{event.date}</p>
                 </div>
               </div>
-            </Wrapper>
+            )
+
+            if (event.href) {
+              return (
+                <Link key={event.id} href={event.href} className={cardClassName} style={cardStyle} {...cardHandlers}>
+                  {cardContent}
+                </Link>
+              )
+            }
+
+            return (
+              <div key={event.id} className={cardClassName} style={cardStyle} {...cardHandlers}>
+                {cardContent}
+              </div>
             )
           })}
         </div>
