@@ -11,29 +11,21 @@ const festivals = [
   {
     id: 'child-welfare',
     title: 'المهرجان الثقافي الوطني لمصلحة الطفل',
-    subtitle: 'Festival Culturel National pour le Bien-être de l\'Enfant',
-    description: 'مهرجان وطني يُعنى بتنمية المواهب الإبداعية لدى الأطفال وتعزيز الثقافة الطفولية',
     icon: Star,
   },
   {
     id: 'shawia-music',
     title: 'المهرجان الثقافي الوطني للموسيقى والأغنية الشاوية',
-    subtitle: 'Festival Culturel National de la Musique et de la Chanson Chaouie',
-    description: 'مهرجان وطني للحفاظ على التراث الموسيقي الشاوي وإبراز الأغنية الشاوية الأصيلة',
     icon: Music,
   },
   {
     id: 'reading',
     title: 'المهرجان الثقافي المحلي للقراءة',
-    subtitle: 'Festival Culturel Local de la Lecture',
-    description: 'مهرجان محلي لتشجيع القراءة ونشر ثقافة المطالعة بين مختلف شرائح المجتمع',
     icon: BookOpen,
   },
   {
     id: 'folk-arts',
     title: 'المهرجان الثقافي المحلي للنشاطات والفنون الشعبية',
-    subtitle: 'Festival Culturel Local des Activités et Arts Populaires',
-    description: 'مهرجان محلي يحتفي بالفنون الشعبية والنشاطات التراثية لمنطقة خنشلة',
     icon: Palette,
   },
 ]
@@ -129,12 +121,6 @@ export default function FestivalsPage() {
                       <h2 className="text-xl md:text-2xl font-bold text-white mb-2 leading-tight transition-colors duration-300 group-hover:text-[#D4956A]">
                         {festival.title}
                       </h2>
-                      <p className="text-xs font-medium mb-3" style={{ color: COPPER_LIGHT }}>
-                        {festival.subtitle}
-                      </p>
-                      <p className="text-sm text-gray-400 leading-relaxed">
-                        {festival.description}
-                      </p>
                     </div>
                   </div>
                 </a>
