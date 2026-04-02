@@ -36,7 +36,7 @@ const departments = [
     icon: Landmark,
     image: 'https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=800&q=80',
     particleType: 'dust',
-    href: '#',
+    href: '/directorate/heritage',
   },
 ]
 
