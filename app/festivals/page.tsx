@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { ArrowRight, Star, Music, BookOpen, Palette } from 'lucide-react'
 
 const COPPER = '#B87333'
-const COPPER_LIGHT = '#D4956A'
 const INDIGO_DEEP = '#0F172A'
 const INDIGO_DARKER = '#0B1120'
 
@@ -153,8 +152,6 @@ export default function FestivalsPage() {
                     <div className="text-right">
                       <h2
                         className="text-xl md:text-2xl font-bold text-white mb-2 leading-tight transition-colors duration-300"
-                        style={{ transition: 'color 0.3s ease' }}
-                        onMouseEnter={() => {}}
                       >
                         {festival.title}
                       </h2>
