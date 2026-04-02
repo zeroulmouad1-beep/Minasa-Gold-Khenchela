@@ -12,7 +12,7 @@ const INDIGO_MEDIUM = '#1E293B'
 const departments = [
   {
     id: 1,
-    title: 'الفنون والآداب',
+    title: 'مصلحة الفنون والآداب',
     description: 'دعم وتنمية المواهب الفنية والأدبية',
     icon: Palette,
     image: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800&q=80',
@@ -20,7 +20,7 @@ const departments = [
   },
   {
     id: 2,
-    title: 'النشاط الثقافي',
+    title: 'مصلحة النشاطات الثقافية',
     description: 'تنظيم الفعاليات والأنشطة الثقافية',
     icon: Users,
     image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80',
@@ -28,7 +28,7 @@ const departments = [
   },
   {
     id: 3,
-    title: 'مصلحة التراث',
+    title: 'مصلحة التراث الثقافي',
     description: 'حماية وتثمين التراث المحلي',
     icon: Landmark,
     image: 'https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=800&q=80',
@@ -88,7 +88,7 @@ export function DirectorateSection() {
     <section
       ref={sectionRef}
       className="py-16 relative overflow-hidden"
-      aria-label="قسم المديرية"
+      aria-label="مصالح المديرية"
       style={{ backgroundColor: INDIGO_MEDIUM }}
     >
       {/* Animated CSS for particles */}
@@ -138,7 +138,7 @@ export function DirectorateSection() {
             الهيكل التنظيمي
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
-            قسم المديرية
+            مصالح المديرية
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl font-light mr-auto">
             تعرف على أقسام مديرية الثقافة والفنون بخنشلة

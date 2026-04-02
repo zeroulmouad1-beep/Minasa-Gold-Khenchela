@@ -32,19 +32,19 @@ export function Navbar() {
         description: 'عرض الأفلام الثقافية والفنية',
       },
     ],
-    'المديرية': [
+    'مصالح المديرية': [
       {
-        title: 'الفنون والآداب',
+        title: 'مصلحة الفنون والآداب',
         image: '/images/heritage.jpg',
         description: 'قسم الفنون البصرية والأدبية',
       },
       {
-        title: 'النشاط الثقافي',
+        title: 'مصلحة النشاطات الثقافية',
         image: '/images/palais-kahina.jpg',
         description: 'تنظيم المهرجانات والفعاليات',
       },
       {
-        title: 'مصلحة التراث',
+        title: 'مصلحة التراث الثقافي',
         image: '/images/chelia.jpg',
         description: 'الحفاظ على الموارد التاريخية',
       },

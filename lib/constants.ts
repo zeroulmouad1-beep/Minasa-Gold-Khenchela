@@ -12,11 +12,11 @@ export const menuItems = [
   },
   {
     id: 'directorate',
-    label: 'المديرية',
+    label: 'مصالح المديرية',
     items: [
-      { label: 'الفنون والآداب', href: '/directorate/arts' },
-      { label: 'النشاط الثقافي', href: '/directorate/activities' },
-      { label: 'مصلحة التراث', href: '/directorate/heritage' },
+      { label: 'مصلحة الفنون والآداب', href: '/directorate/arts' },
+      { label: 'مصلحة النشاطات الثقافية', href: '/directorate/activities' },
+      { label: 'مصلحة التراث الثقافي', href: '/directorate/heritage' },
     ],
   },
   {
