@@ -259,7 +259,7 @@ export function ImmersiveHero({ onEnter }: { onEnter: () => void }) {
 
           {/* Contact Us Button */}
           <button
-            className="group flex flex-col items-center gap-3 transition-transform duration-300 hover:scale-110"
+            className="group flex flex-col items-center gap-3 transition-transform duration-300 hover:scale-110 cursor-pointer"
             onClick={() => {}}
           >
             <div
@@ -310,10 +310,12 @@ export function ImmersiveHero({ onEnter }: { onEnter: () => void }) {
               </svg>
             </div>
             <span
-              className="text-sm md:text-base font-medium"
+              className="text-sm md:text-base font-medium text-center leading-tight"
               style={{ color: '#FFFFFF', fontFamily: "'Cairo', sans-serif" }}
             >
-              اتصل بنا
+              اتصل
+              <br />
+              بنا
             </span>
           </button>
         </div>
