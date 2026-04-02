@@ -11,21 +11,25 @@ const festivals = [
   {
     id: 'child-welfare',
     title: 'المهرجان الثقافي الوطني لمصلحة الطفل',
+    subtitle: 'مهرجان وطني',
     icon: Star,
   },
   {
     id: 'shawia-music',
     title: 'المهرجان الثقافي الوطني للموسيقى والأغنية الشاوية',
+    subtitle: 'مهرجان وطني',
     icon: Music,
   },
   {
     id: 'reading',
     title: 'المهرجان الثقافي المحلي للقراءة',
+    subtitle: 'مهرجان محلي',
     icon: BookOpen,
   },
   {
     id: 'folk-arts',
     title: 'المهرجان الثقافي المحلي للنشاطات والفنون الشعبية',
+    subtitle: 'مهرجان محلي',
     icon: Palette,
   },
 ]
@@ -121,6 +125,9 @@ export default function FestivalsPage() {
                       <h2 className="text-xl md:text-2xl font-bold text-white mb-2 leading-tight transition-colors duration-300 group-hover:text-[#D4956A]">
                         {festival.title}
                       </h2>
+                      <p className="text-xs font-medium" style={{ color: COPPER_LIGHT }}>
+                        {festival.subtitle}
+                      </p>
                     </div>
                   </div>
                 </a>
