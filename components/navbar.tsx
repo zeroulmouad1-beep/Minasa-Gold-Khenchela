@@ -110,6 +110,11 @@ export function Navbar() {
           <Link href="#services" className="text-white font-medium text-sm hover:text-[#B87333] transition-colors">
             {menuItems[2].label}
           </Link>
+
+          {/* Festivals Link */}
+          <Link href="/festivals" className="text-white font-medium text-sm hover:text-[#B87333] transition-colors">
+            المهرجانات الثقافية
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -135,6 +140,12 @@ export function Navbar() {
                 {item.label}
               </Link>
             ))}
+            <Link
+              href="/festivals"
+              className="block text-white font-medium py-2 hover:text-[#B87333] transition-colors"
+            >
+              المهرجانات الثقافية
+            </Link>
           </div>
         </div>
       )}
