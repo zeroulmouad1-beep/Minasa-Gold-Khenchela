@@ -48,21 +48,61 @@ export default function FestivalsPage() {
       }}
     >
       <div
-        className="fixed inset-0 opacity-[0.06] pointer-events-none"
+        className="fixed top-[-10%] right-[-10%] w-[60%] h-[60%] pointer-events-none z-[1]"
+        style={{
+          backgroundImage: 'url("/images/cultural-festival.jpg")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: 0.15,
+          filter: 'blur(40px)',
+        }}
+      />
+
+      <div
+        className="fixed bottom-[-10%] left-[-10%] w-[55%] h-[55%] pointer-events-none z-[1]"
+        style={{
+          backgroundImage: 'url("/images/music-concert.jpg")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: 0.12,
+          filter: 'blur(44px)',
+        }}
+      />
+
+      <div
+        className="fixed top-[30%] left-[10%] w-[40%] h-[40%] pointer-events-none z-[1]"
+        style={{
+          backgroundImage: 'url("/images/heritage.jpg")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: 0.08,
+          filter: 'blur(50px)',
+        }}
+      />
+
+      <div
+        className="fixed inset-0 pointer-events-none z-[2]"
+        style={{
+          background: `radial-gradient(ellipse at center, ${INDIGO_DEEP}B0 0%, ${INDIGO_DARKER}E6 50%, #060A14F2 100%)`,
+        }}
+      />
+
+      <div
+        className="fixed inset-0 opacity-[0.06] pointer-events-none z-[3]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B87333' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }}
       />
 
       <div
-        className="fixed top-0 right-0 w-[600px] h-[600px] opacity-20 pointer-events-none"
+        className="fixed top-0 right-0 w-[600px] h-[600px] opacity-20 pointer-events-none z-[3]"
         style={{
           background: `radial-gradient(circle, ${COPPER}40 0%, transparent 70%)`,
         }}
       />
 
       <div
-        className="fixed bottom-0 left-0 w-[500px] h-[500px] opacity-10 pointer-events-none"
+        className="fixed bottom-0 left-0 w-[500px] h-[500px] opacity-10 pointer-events-none z-[3]"
         style={{
           background: `radial-gradient(circle, #2DD4BF30 0%, transparent 70%)`,
         }}
