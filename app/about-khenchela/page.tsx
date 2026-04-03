@@ -43,16 +43,16 @@ export default function AboutKhenchelaPage() {
     <div className="min-h-screen" dir="rtl" style={{ backgroundColor: INDIGO_DEEP }}>
       <div className="relative h-[70vh] min-h-[500px] overflow-hidden">
         <Image
-          src="/images/chelia.jpg"
-          alt="قمة الشلية - خنشلة"
+          src="/images/khenchela-collage.jpg"
+          alt="تراث وثقافة خنشلة"
           fill
-          className="object-cover"
+          className="object-cover object-top"
           priority
         />
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to bottom, rgba(15,23,42,0.4) 0%, rgba(15,23,42,0.7) 60%, rgba(15,23,42,1) 100%)',
+            background: 'linear-gradient(to bottom, rgba(15,23,42,0.55) 0%, rgba(15,23,42,0.75) 50%, rgba(15,23,42,1) 100%)',
           }}
         />
 
