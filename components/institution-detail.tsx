@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, MapPin, Phone, Mail, Clock, Calendar, Newspaper, Palette, Film, BookOpen, Music, Drama, LucideIcon } from 'lucide-react'
+import { ArrowRight, MapPin, Phone, Mail, Clock, Calendar, Newspaper, Palette, Film, BookOpen, Music, Drama, LucideIcon, Theater, Paintbrush, BookText, Video, Landmark, Coffee, Users, GraduationCap } from 'lucide-react'
 
 // Define colors directly to avoid importing from data file
 const COPPER = '#B87333'
@@ -140,6 +140,35 @@ const libraryAnnexes: LibraryAnnex[] = [
   { name: 'قايس', type: 'شبه حضارية' },
   { name: 'يابوس', type: 'ريفية' },
   { name: 'المصارة', type: 'ريفية' },
+]
+
+interface CultureHouseWorkshop {
+  name: string
+  icon: LucideIcon
+}
+
+const pedagogicalWorkshops: CultureHouseWorkshop[] = [
+  { name: 'ورشة المسرح', icon: Theater },
+  { name: 'ورشة الفنون التشكيلية', icon: Paintbrush },
+  { name: 'النادي الأدبي', icon: BookText },
+  { name: 'ورشة السمعي البصري', icon: Video },
+  { name: 'ورشة الموسيقى', icon: Music },
+  { name: 'ورشة التراث الشعبي', icon: Landmark },
+]
+
+interface CultureHouseFacility {
+  name: string
+  subtitle?: string
+  icon: LucideIcon
+}
+
+const cultureHouseFacilities: CultureHouseFacility[] = [
+  { name: 'مدرسة تعليم الموسيقى', icon: GraduationCap },
+  { name: 'مكتبة الصغار', icon: BookOpen },
+  { name: 'مكتبة الكبار', icon: BookText },
+  { name: 'القاعة متعددة النشاطات', icon: Users },
+  { name: 'الرواق التشكيلي', subtitle: '(حكار لزهر)', icon: Palette },
+  { name: 'المقهى الثقافي', icon: Coffee },
 ]
 
 interface InstitutionDetailProps {
@@ -403,6 +432,103 @@ export function InstitutionDetail({ institutionId }: InstitutionDetailProps) {
                         </div>
                       </div>
                     )})}
+                  </div>
+                </section>
+              )}
+
+              {institutionId === 'culture-house' && (
+                <section
+                  className="rounded-2xl p-6 sm:p-8 border"
+                  style={{ backgroundColor: INDIGO_MEDIUM, borderColor: `${COPPER}30` }}
+                >
+                  <div className="flex items-center gap-3 mb-6">
+                    <div
+                      className="w-10 h-10 rounded-xl flex items-center justify-center"
+                      style={{ backgroundColor: `${COPPER_LIGHT}20`, border: `1px solid ${COPPER_LIGHT}40` }}
+                    >
+                      <GraduationCap size={20} style={{ color: COPPER_LIGHT }} />
+                    </div>
+                    <div>
+                      <h2 className="text-xl sm:text-2xl font-bold text-white" style={{ fontFamily: 'Tajawal, sans-serif' }}>الجناح البيداغوجي</h2>
+                      <p className="text-sm text-gray-400" style={{ fontFamily: 'Tajawal, sans-serif' }}>6 ورشات تكوينية وإبداعية</p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                    {pedagogicalWorkshops.map((workshop) => {
+                      const WorkshopIcon = workshop.icon
+                      return (
+                        <div
+                          key={workshop.name}
+                          className="rounded-xl p-4 border transition-all duration-300 hover:scale-[1.02]"
+                          style={{
+                            backgroundColor: 'rgba(30,41,59,0.6)',
+                            backdropFilter: 'blur(12px)',
+                            borderColor: `${COPPER}25`,
+                          }}
+                        >
+                          <div className="flex items-center gap-3" dir="rtl">
+                            <div
+                              className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+                              style={{ backgroundColor: `${COPPER}15` }}
+                            >
+                              <WorkshopIcon size={16} style={{ color: COPPER_LIGHT }} />
+                            </div>
+                            <p className="text-white font-medium text-sm" style={{ fontFamily: 'Tajawal, sans-serif' }}>{workshop.name}</p>
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
+                </section>
+              )}
+
+              {institutionId === 'culture-house' && (
+                <section
+                  className="rounded-2xl p-6 sm:p-8 border"
+                  style={{ backgroundColor: INDIGO_MEDIUM, borderColor: `${COPPER}30` }}
+                >
+                  <div className="flex items-center gap-3 mb-6">
+                    <div
+                      className="w-10 h-10 rounded-xl flex items-center justify-center"
+                      style={{ backgroundColor: `${COPPER_LIGHT}20`, border: `1px solid ${COPPER_LIGHT}40` }}
+                    >
+                      <Landmark size={20} style={{ color: COPPER_LIGHT }} />
+                    </div>
+                    <div>
+                      <h2 className="text-xl sm:text-2xl font-bold text-white" style={{ fontFamily: 'Tajawal, sans-serif' }}>المرافق والمصالح</h2>
+                      <p className="text-sm text-gray-400" style={{ fontFamily: 'Tajawal, sans-serif' }}>المرافق المستقلة التابعة لدار الثقافة</p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                    {cultureHouseFacilities.map((facility) => {
+                      const FacilityIcon = facility.icon
+                      return (
+                        <div
+                          key={facility.name}
+                          className="rounded-xl p-4 border transition-all duration-300 hover:scale-[1.02]"
+                          style={{
+                            backgroundColor: 'rgba(30,41,59,0.6)',
+                            backdropFilter: 'blur(12px)',
+                            borderColor: `${COPPER}25`,
+                          }}
+                        >
+                          <div className="flex items-center gap-3" dir="rtl">
+                            <div
+                              className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+                              style={{ backgroundColor: `${COPPER}15` }}
+                            >
+                              <FacilityIcon size={16} style={{ color: COPPER_LIGHT }} />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <p className="text-white font-medium text-sm" style={{ fontFamily: 'Tajawal, sans-serif' }}>{facility.name}</p>
+                              {facility.subtitle && (
+                                <p className="text-xs mt-0.5" style={{ color: COPPER, fontFamily: 'Amiri, serif' }}>{facility.subtitle}</p>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      )
+                    })}
                   </div>
                 </section>
               )}
