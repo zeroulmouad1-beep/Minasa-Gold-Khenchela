@@ -125,6 +125,23 @@ const institutionsData: Record<string, InstitutionData> = {
   },
 }
 
+interface LibraryAnnex {
+  name: string
+  type: 'شبه حضارية' | 'ريفية'
+}
+
+const libraryAnnexes: LibraryAnnex[] = [
+  { name: 'الحامة', type: 'شبه حضارية' },
+  { name: 'أولاد رشاش', type: 'شبه حضارية' },
+  { name: 'ششار', type: 'شبه حضارية' },
+  { name: 'عين الطويلة', type: 'شبه حضارية' },
+  { name: 'بوحمامة', type: 'شبه حضارية' },
+  { name: 'بابار', type: 'شبه حضارية' },
+  { name: 'قايس', type: 'شبه حضارية' },
+  { name: 'يابوس', type: 'ريفية' },
+  { name: 'المصارة', type: 'ريفية' },
+]
+
 interface InstitutionDetailProps {
   institutionId: string
 }
@@ -344,17 +361,9 @@ export function InstitutionDetail({ institutionId }: InstitutionDetailProps) {
                     </div>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {[
-                      { name: 'الحامة', type: 'شبه حضارية' as const },
-                      { name: 'أولاد رشاش', type: 'شبه حضارية' as const },
-                      { name: 'ششار', type: 'شبه حضارية' as const },
-                      { name: 'عين الطويلة', type: 'شبه حضارية' as const },
-                      { name: 'بوحمامة', type: 'شبه حضارية' as const },
-                      { name: 'بابار', type: 'شبه حضارية' as const },
-                      { name: 'قايس', type: 'شبه حضارية' as const },
-                      { name: 'يابوس', type: 'ريفية' as const },
-                      { name: 'المصارة', type: 'ريفية' as const },
-                    ].map((annex) => (
+                    {libraryAnnexes.map((annex) => {
+                      const AnnexIcon = annex.type === 'ريفية' ? MapPin : BookOpen
+                      return (
                       <div
                         key={annex.name}
                         className="rounded-xl p-4 border transition-all duration-300 hover:scale-[1.02]"
@@ -371,7 +380,7 @@ export function InstitutionDetail({ institutionId }: InstitutionDetailProps) {
                               backgroundColor: annex.type === 'ريفية' ? 'rgba(34,197,94,0.12)' : 'rgba(59,130,246,0.12)',
                             }}
                           >
-                            <BookOpen
+                            <AnnexIcon
                               size={16}
                               style={{ color: annex.type === 'ريفية' ? '#22C55E' : '#3B82F6' }}
                             />
@@ -391,7 +400,7 @@ export function InstitutionDetail({ institutionId }: InstitutionDetailProps) {
                           </span>
                         </div>
                       </div>
-                    ))}
+                    )})}
                   </div>
                 </section>
               )}
