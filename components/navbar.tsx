@@ -24,7 +24,7 @@ export function Navbar() {
       {
         title: 'المكتبة الرئيسية للمطالعة العمومية',
         image: '/images/heritage.jpg',
-        description: 'مكتبة المخطوطات والكتب النادرة',
+        description: '',
       },
       {
         title: 'قاعة السينيماتيك',

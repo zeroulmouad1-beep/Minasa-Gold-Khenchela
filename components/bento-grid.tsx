@@ -23,7 +23,7 @@ const institutions = [
   {
     id: 'cinema',
     title: 'قاعة السينيماتيك',
-    description: 'عرض الأفلام والفنون',
+    description: '',
     icon: Film,
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1774795667583-TGPHZqsJcqyVXpUY9kWIQvHLg4CjFu.png',
     iconBg: INDIGO_LIGHT,
@@ -32,7 +32,7 @@ const institutions = [
   {
     id: 'library',
     title: 'المكتبة الرئيسية للمطالعة العمومية',
-    description: 'المخطوطات والكتب النادرة',
+    description: '',
     icon: BookOpen,
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1774810625631-D7LXz11tS6JipsAEbz3zRkSScB8q9H.png',
     iconBg: COPPER_LIGHT,

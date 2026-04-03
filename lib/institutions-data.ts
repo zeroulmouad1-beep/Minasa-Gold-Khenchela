@@ -47,7 +47,7 @@ export const institutions: Institution[] = [
   {
     id: 'cinema',
     title: 'قاعة السينيماتيك',
-    description: 'عرض الأفلام والفنون',
+    description: '',
     fullDescription: 'قاعة السينيماتيك بخنشلة هي مركز ثقافي متميز يقدم عروضاً سينمائية متنوعة تشمل الأفلام الجزائرية والعربية والعالمية. تستضيف القاعة أيضاً مهرجانات سينمائية ومعارض فنية وورشات عمل للشباب المهتمين بصناعة الأفلام.',
     iconName: 'film',
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1774795667583-TGPHZqsJcqyVXpUY9kWIQvHLg4CjFu.png',
@@ -65,7 +65,7 @@ export const institutions: Institution[] = [
     id: 'library',
     title: 'المكتبة الرئيسية للمطالعة العمومية',
     subtitle: '(الشهيد صيد لعروس)',
-    description: 'المخطوطات والكتب النادرة',
+    description: '',
     fullDescription: 'المكتبة الرئيسية للمطالعة العمومية بخنشلة (الشهيد صيد لعروس) تحتوي على آلاف الكتب والمراجع العلمية والأدبية. تضم المكتبة قسماً خاصاً بالمخطوطات النادرة والوثائق التاريخية، بالإضافة إلى قاعات للمطالعة ومساحات للدراسة والبحث.',
     iconName: 'book-open',
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1774810625631-D7LXz11tS6JipsAEbz3zRkSScB8q9H.png',
