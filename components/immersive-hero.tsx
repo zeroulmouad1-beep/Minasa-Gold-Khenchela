@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 
 export function ImmersiveHero({ onEnter }: { onEnter: () => void }) {
   const [isExiting, setIsExiting] = useState(false)
@@ -155,13 +156,54 @@ export function ImmersiveHero({ onEnter }: { onEnter: () => void }) {
 
         {/* Bottom Action Buttons */}
         <div
-          className="mt-10 flex items-center justify-center gap-8 md:gap-16"
+          className="mt-10 grid grid-cols-2 md:flex md:items-center md:justify-center gap-6 md:gap-16 max-w-xs md:max-w-none mx-auto"
           style={{
             animation: 'fadeInUp 1s ease-out 0.9s forwards',
             opacity: 0,
             animationFillMode: 'forwards',
           }}
         >
+          {/* Khenchela Profile Button */}
+          <Link
+            href="/about-khenchela"
+            className="group flex flex-col items-center gap-3 transition-transform duration-300 hover:scale-110 cursor-pointer"
+          >
+            <div
+              className="w-16 h-16 md:w-20 md:h-20 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:shadow-lg"
+              style={{
+                background: 'linear-gradient(145deg, rgba(197, 160, 89, 0.15) 0%, rgba(139, 105, 20, 0.1) 100%)',
+                border: '1px solid rgba(197, 160, 89, 0.3)',
+                backdropFilter: 'blur(8px)',
+              }}
+            >
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="transition-transform duration-300 group-hover:scale-110"
+              >
+                <path
+                  d="M6 38L14 20L20 30L28 14L34 26L42 38H6Z"
+                  fill="rgba(197, 160, 89, 0.2)"
+                  stroke="#C5A059"
+                  strokeWidth="1.5"
+                  strokeLinejoin="round"
+                />
+                <circle cx="24" cy="12" r="3" fill="none" stroke="#C5A059" strokeWidth="1.5" />
+                <path d="M24 15V20" stroke="#C5A059" strokeWidth="1" opacity="0.6" />
+                <path d="M10 38C10 38 14 34 18 34C22 34 26 38 30 38C34 38 38 34 38 34" stroke="#C5A059" strokeWidth="1" opacity="0.4" />
+              </svg>
+            </div>
+            <span
+              className="text-sm md:text-base font-medium text-center leading-tight"
+              style={{ color: '#FFFFFF', fontFamily: "'Cairo', sans-serif" }}
+            >
+              خنشلة
+            </span>
+          </Link>
+
           {/* Archaeological Map Button - External Link */}
           <a
             href="https://www.google.com/maps/d/u/0/edit?mid=1pfr-rEbo1GhnW4Ba8v2ifv213Z79BnE&usp=sharing"
@@ -177,7 +219,6 @@ export function ImmersiveHero({ onEnter }: { onEnter: () => void }) {
                 backdropFilter: 'blur(8px)',
               }}
             >
-              {/* Map Icon SVG */}
               <svg
                 width="40"
                 height="40"
