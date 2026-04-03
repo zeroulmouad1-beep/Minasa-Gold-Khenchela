@@ -7,7 +7,8 @@ export const menuItems = [
       { label: 'المتحف العمومي الوطني', href: '/institutions/museum' },
       { label: 'دار الثقافة', href: '/institutions/cultural-house' },
       { label: 'المكتبة الرئيسية للمطالعة العمومية', href: '/institutions/library' },
-      { label: 'السيناماتيك', href: '/institutions/cinematheque' },
+      { label: 'قاعة السينيماتيك', href: '/institutions/cinematheque' },
+      { label: 'مسرح الهواء الطلق', href: '/institutions/theater' },
     ],
   },
   {

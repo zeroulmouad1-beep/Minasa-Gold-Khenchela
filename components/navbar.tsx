@@ -31,6 +31,11 @@ export function Navbar() {
         image: '/images/chelia.jpg',
         description: 'عرض الأفلام الثقافية والفنية',
       },
+      {
+        title: 'مسرح الهواء الطلق',
+        image: '/images/cultural-festival.jpg',
+        description: 'عروض مسرحية فنية',
+      },
     ],
     'مصالح المديرية': [
       {
