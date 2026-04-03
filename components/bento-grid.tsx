@@ -13,7 +13,7 @@ const INDIGO_LIGHT = '#334155'
 const institutions = [
   {
     id: 'museum',
-    title: 'المتحف الوطني',
+    title: 'المتحف العمومي الوطني',
     description: 'متحف الآثار والتراث الخنشلي',
     icon: Palette,
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1774793547954-h5WWAy5VWDHTLXGuoXioEKWpbVLqVH.png',
@@ -22,7 +22,7 @@ const institutions = [
   },
   {
     id: 'cinema',
-    title: 'دار السينما',
+    title: 'قاعة السينيماتيك',
     description: 'عرض الأفلام والفنون',
     icon: Film,
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1774795667583-TGPHZqsJcqyVXpUY9kWIQvHLg4CjFu.png',
@@ -31,7 +31,7 @@ const institutions = [
   },
   {
     id: 'library',
-    title: 'المكتبة الرئيسية',
+    title: 'المكتبة الرئيسية للمطالعة العمومية',
     description: 'المخطوطات والكتب النادرة',
     icon: BookOpen,
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1774810625631-D7LXz11tS6JipsAEbz3zRkSScB8q9H.png',
@@ -49,7 +49,7 @@ const institutions = [
   },
   {
     id: 'theater',
-    title: 'المسرح الجهوي',
+    title: 'مسرح الهواء الطلق',
     description: 'عروض مسرحية فنية',
     icon: Drama,
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1774870644717-NBL1epahbVNZ3kIG7YNHqQtNKPB1EP.png',
@@ -186,7 +186,7 @@ export function BentoGrid() {
                   }}
                 />
 
-                {inst.title === 'دار السينما' && (
+                {inst.title === 'قاعة السينيماتيك' && (
                   <div
                     className="absolute top-0 left-1/2 -translate-x-1/2 w-[100px] h-full opacity-0 group-hover:opacity-30 transition-opacity duration-700 pointer-events-none"
                     style={{
@@ -196,7 +196,7 @@ export function BentoGrid() {
                   />
                 )}
 
-                {inst.title === 'المكتبة الرئيسية' && (
+                {inst.title === 'المكتبة الرئيسية للمطالعة العمومية' && (
                   <div
                     className="absolute bottom-0 right-0 w-[150px] h-[150px] opacity-0 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none"
                     style={{

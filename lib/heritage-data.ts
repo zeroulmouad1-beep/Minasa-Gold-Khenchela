@@ -37,7 +37,7 @@ const nationalMonumentsData: NationalMonument[] = [
   },
   {
     id: 3,
-    title: 'المتحف الأثري لخنشلة',
+    title: 'المتحف العمومي الوطني (الاخوة الشهداء بولعزيز)',
     image: '/images/museum-khenchela.jpg',
     description: 'متحف يضم مجموعة غنية من القطع الأثرية التي تعود إلى مختلف الحقب التاريخية، من العصر الروماني إلى الفترة الإسلامية. يحتوي على فسيفساء نادرة ومنحوتات وأدوات تاريخية تروي قصة المنطقة.',
     classificationDate: '1985-11-02',
@@ -61,7 +61,7 @@ const nationalMonumentsData: NationalMonument[] = [
 const inventoryMonumentsData: InventoryMonument[] = [
   {
     id: 1,
-    title: 'دار السينما خنشلة',
+    title: 'قاعة السينيماتيك خنشلة',
     image: '/images/cinema-interior.jpg',
     description: 'قاعة سينما تاريخية تعود إلى الحقبة الاستعمارية، أُعيد ترميمها للحفاظ على طابعها المعماري الأصلي. تُستخدم حالياً لعرض الأفلام والأنشطة الثقافية المحلية.',
     inventoryNumber: 'INV-KHN-2020-001',

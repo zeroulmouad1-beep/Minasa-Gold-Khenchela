@@ -12,7 +12,7 @@ export function Navbar() {
   const megaMenuContent: Record<string, { title: string; image: string; description: string }[]> = {
     'المؤسسات الثقافية': [
       {
-        title: 'المتحف الوطني',
+        title: 'المتحف العمومي الوطني',
         image: '/images/chelia.jpg',
         description: 'متحف الآثار والتراث الخنشلي',
       },
@@ -22,12 +22,12 @@ export function Navbar() {
         description: 'مركز الفنون والأداب',
       },
       {
-        title: 'المكتبة الرئيسية',
+        title: 'المكتبة الرئيسية للمطالعة العمومية',
         image: '/images/heritage.jpg',
         description: 'مكتبة المخطوطات والكتب النادرة',
       },
       {
-        title: 'دار السينما',
+        title: 'قاعة السينيماتيك',
         image: '/images/chelia.jpg',
         description: 'عرض الأفلام الثقافية والفنية',
       },

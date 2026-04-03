@@ -11,6 +11,7 @@ export type IconName = 'palette' | 'film' | 'book-open' | 'music' | 'drama'
 export interface Institution {
   id: string
   title: string
+  subtitle?: string
   description: string
   fullDescription: string
   iconName: IconName
@@ -27,9 +28,10 @@ export interface Institution {
 export const institutions: Institution[] = [
   {
     id: 'museum',
-    title: 'المتحف الوطني',
+    title: 'المتحف العمومي الوطني',
+    subtitle: '(الاخوة الشهداء بولعزيز)',
     description: 'متحف الآثار والتراث الخنشلي',
-    fullDescription: 'المتحف الوطني بخنشلة هو صرح ثقافي يحتضن كنوز التراث الخنشلي والآثار التاريخية العريقة. يضم المتحف مجموعات نادرة من القطع الأثرية التي تعود إلى حقب زمنية مختلفة، من العصر الروماني إلى الفترة الإسلامية، مما يجعله وجهة أساسية للباحثين والمهتمين بالتاريخ والحضارة.',
+    fullDescription: 'المتحف العمومي الوطني بخنشلة (الاخوة الشهداء بولعزيز) هو صرح ثقافي يحتضن كنوز التراث الخنشلي والآثار التاريخية العريقة. يضم المتحف مجموعات نادرة من القطع الأثرية التي تعود إلى حقب زمنية مختلفة، من العصر الروماني إلى الفترة الإسلامية، مما يجعله وجهة أساسية للباحثين والمهتمين بالتاريخ والحضارة.',
     iconName: 'palette',
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1774793547954-h5WWAy5VWDHTLXGuoXioEKWpbVLqVH.png',
     gallery: [
@@ -44,9 +46,9 @@ export const institutions: Institution[] = [
   },
   {
     id: 'cinema',
-    title: 'دار السينما',
+    title: 'قاعة السينيماتيك',
     description: 'عرض الأفلام والفنون',
-    fullDescription: 'دار السينما بخنشلة هي مركز ثقافي متميز يقدم عروضاً سينمائية متنوعة تشمل الأفلام الجزائرية والعربية والعالمية. تستضيف الدار أيضاً مهرجانات سينمائية ومعارض فنية وورشات عمل للشباب المهتمين بصناعة الأفلام.',
+    fullDescription: 'قاعة السينيماتيك بخنشلة هي مركز ثقافي متميز يقدم عروضاً سينمائية متنوعة تشمل الأفلام الجزائرية والعربية والعالمية. تستضيف القاعة أيضاً مهرجانات سينمائية ومعارض فنية وورشات عمل للشباب المهتمين بصناعة الأفلام.',
     iconName: 'film',
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1774795667583-TGPHZqsJcqyVXpUY9kWIQvHLg4CjFu.png',
     gallery: [
@@ -61,9 +63,10 @@ export const institutions: Institution[] = [
   },
   {
     id: 'library',
-    title: 'المكتبة الرئيسية',
+    title: 'المكتبة الرئيسية للمطالعة العمومية',
+    subtitle: '(الشهيد صيد لعروس)',
     description: 'المخطوطات والكتب النادرة',
-    fullDescription: 'المكتبة الرئيسية للمطالعة العمومية بخنشلة تحتوي على آلاف الكتب والمراجع العلمية والأدبية. تضم المكتبة قسماً خاصاً بالمخطوطات النادرة والوثائق التاريخية، بالإضافة إلى قاعات للمطالعة ومساحات للدراسة والبحث.',
+    fullDescription: 'المكتبة الرئيسية للمطالعة العمومية بخنشلة (الشهيد صيد لعروس) تحتوي على آلاف الكتب والمراجع العلمية والأدبية. تضم المكتبة قسماً خاصاً بالمخطوطات النادرة والوثائق التاريخية، بالإضافة إلى قاعات للمطالعة ومساحات للدراسة والبحث.',
     iconName: 'book-open',
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1774810625631-D7LXz11tS6JipsAEbz3zRkSScB8q9H.png',
     gallery: [
@@ -79,8 +82,9 @@ export const institutions: Institution[] = [
   {
     id: 'culture-house',
     title: 'دار الثقافة',
+    subtitle: '(علي سوايحي)',
     description: 'مركز الفنون والآداب',
-    fullDescription: 'دار الثقافة علي سوايحي بخنشلة هي مركز ثقافي متعدد الأنشطة يحتضن الفعاليات الفنية والأدبية والثقافية. تضم الدار قاعات للعروض المسرحية والموسيقية، ومعارض للفنون التشكيلية، وورشات للإبداع الفني للشباب.',
+    fullDescription: 'دار الثقافة (علي سوايحي) بخنشلة هي مركز ثقافي متعدد الأنشطة يحتضن الفعاليات الفنية والأدبية والثقافية. تضم الدار قاعات للعروض المسرحية والموسيقية، ومعارض للفنون التشكيلية، وورشات للإبداع الفني للشباب.',
     iconName: 'music',
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1774869219177-9FA2lSqhYeac1F5z9G8fcynSqwJsRF.png',
     gallery: [
@@ -95,9 +99,10 @@ export const institutions: Institution[] = [
   },
   {
     id: 'theater',
-    title: 'المسرح الجهوي',
+    title: 'مسرح الهواء الطلق',
+    subtitle: '(حسينة لواج)',
     description: 'عروض مسرحية فنية',
-    fullDescription: 'المسرح الجهوي بخنشلة (مسرح الهواء الطلق) هو فضاء فني مميز يستضيف العروض المسرحية والفنية المتنوعة. يتميز المسرح بتصميمه المعماري الفريد الذي يمزج بين الطابع التقليدي والحداثة، مما يجعله وجهة مثالية للفعاليات الثقافية الكبرى.',
+    fullDescription: 'مسرح الهواء الطلق (حسينة لواج) بخنشلة هو فضاء فني مميز يستضيف العروض المسرحية والفنية المتنوعة. يتميز المسرح بتصميمه المعماري الفريد الذي يمزج بين الطابع التقليدي والحداثة، مما يجعله وجهة مثالية للفعاليات الثقافية الكبرى.',
     iconName: 'drama',
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1774870644717-NBL1epahbVNZ3kIG7YNHqQtNKPB1EP.png',
     gallery: [

@@ -4,9 +4,9 @@ export const menuItems = [
     id: 'institutions',
     label: 'المؤسسات الثقافية',
     items: [
-      { label: 'المتحف', href: '/institutions/museum' },
+      { label: 'المتحف العمومي الوطني', href: '/institutions/museum' },
       { label: 'دار الثقافة', href: '/institutions/cultural-house' },
-      { label: 'المكتبة', href: '/institutions/library' },
+      { label: 'المكتبة الرئيسية للمطالعة العمومية', href: '/institutions/library' },
       { label: 'السيناماتيك', href: '/institutions/cinematheque' },
     ],
   },
