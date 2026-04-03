@@ -325,6 +325,76 @@ export function InstitutionDetail({ institutionId }: InstitutionDetailProps) {
                   </p>
                 </div>
               </section>
+
+              {institutionId === 'library' && (
+                <section
+                  className="rounded-2xl p-8 border"
+                  style={{ backgroundColor: INDIGO_MEDIUM, borderColor: `${COPPER}30` }}
+                >
+                  <div className="flex items-center gap-3 mb-6">
+                    <div
+                      className="w-10 h-10 rounded-xl flex items-center justify-center"
+                      style={{ backgroundColor: `${COPPER_LIGHT}20`, border: `1px solid ${COPPER_LIGHT}40` }}
+                    >
+                      <MapPin size={20} style={{ color: COPPER_LIGHT }} />
+                    </div>
+                    <div>
+                      <h2 className="text-2xl font-bold text-white">ملحقات المكتبة عبر الولاية</h2>
+                      <p className="text-sm text-gray-400">9 ملحقات موزعة عبر بلديات ولاية خنشلة</p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {[
+                      { name: 'الحامة', type: 'شبه حضارية' as const },
+                      { name: 'أولاد رشاش', type: 'شبه حضارية' as const },
+                      { name: 'ششار', type: 'شبه حضارية' as const },
+                      { name: 'عين الطويلة', type: 'شبه حضارية' as const },
+                      { name: 'بوحمامة', type: 'شبه حضارية' as const },
+                      { name: 'بابار', type: 'شبه حضارية' as const },
+                      { name: 'قايس', type: 'شبه حضارية' as const },
+                      { name: 'يابوس', type: 'ريفية' as const },
+                      { name: 'المصارة', type: 'ريفية' as const },
+                    ].map((annex) => (
+                      <div
+                        key={annex.name}
+                        className="rounded-xl p-4 border transition-all duration-300 hover:scale-[1.02]"
+                        style={{
+                          backgroundColor: 'rgba(30,41,59,0.6)',
+                          backdropFilter: 'blur(12px)',
+                          borderColor: annex.type === 'ريفية' ? 'rgba(34,197,94,0.25)' : 'rgba(59,130,246,0.25)',
+                        }}
+                      >
+                        <div className="flex items-center gap-3" dir="rtl">
+                          <div
+                            className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+                            style={{
+                              backgroundColor: annex.type === 'ريفية' ? 'rgba(34,197,94,0.12)' : 'rgba(59,130,246,0.12)',
+                            }}
+                          >
+                            <BookOpen
+                              size={16}
+                              style={{ color: annex.type === 'ريفية' ? '#22C55E' : '#3B82F6' }}
+                            />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <p className="text-white font-medium text-sm">{annex.name}</p>
+                          </div>
+                          <span
+                            className="text-xs px-2.5 py-1 rounded-full font-medium flex-shrink-0"
+                            style={{
+                              backgroundColor: annex.type === 'ريفية' ? 'rgba(34,197,94,0.15)' : 'rgba(59,130,246,0.15)',
+                              color: annex.type === 'ريفية' ? '#4ADE80' : '#60A5FA',
+                              border: `1px solid ${annex.type === 'ريفية' ? 'rgba(34,197,94,0.3)' : 'rgba(59,130,246,0.3)'}`,
+                            }}
+                          >
+                            {annex.type}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              )}
             </div>
 
             {/* Sidebar */}
